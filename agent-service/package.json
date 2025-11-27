@@ -1,0 +1,27 @@
+{
+    "name": "agent-service",
+    "version": "1.0.0",
+    "description": "AI Engine for Boxen AI",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "node dist/index.js",
+        "dev": "nodemon src/index.ts",
+        "build": "tsc"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "langchain": "^0.1.0",
+        "@langchain/openai": "^0.0.14",
+        "dotenv": "^16.4.5",
+        "bullmq": "^5.4.1",
+        "ioredis": "^5.3.2"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3",
+        "ts-node": "^10.9.2",
+        "nodemon": "^3.1.0",
+        "@types/node": "^20.11.24"
+    }
+}
