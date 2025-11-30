@@ -12,7 +12,7 @@ export interface ChatResponse {
 
 export class RagAgent {
   private llm: ChatOpenAI;
-  privateembedder: Embedder;
+  private embedder: Embedder;
   private apiBaseUrl: string;
 
   constructor() {

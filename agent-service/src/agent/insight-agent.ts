@@ -43,7 +43,7 @@ Insights JSON:`;
       const prompt = PromptTemplate.fromTemplate(template);
       const chain = prompt.pipe(this.llm).pipe(new JsonOutputParser());
 
-      const insights = await chain.invoke({ context: emailContext });
+      const insights:any = await chain.invoke({ context: emailContext });
 
       // 3. Save Insights
       if (Array.isArray(insights)) {

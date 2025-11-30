@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy &amp; Security Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      .glass-card {
+        background-color: rgba(20, 25, 60, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .toggle-bg:after {
+        content: '';
+        @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition-all;
+      }
+      input:checked + .toggle-bg:after {
+        @apply transform translate-x-full;
+      }
+      input:checked + .toggle-bg {
+        @apply bg-primary;
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8c2bee",
+              "background-light": "#f7f6f8",
+              "background-dark": "#0A0F2B",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#F0F0F0]">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 p-6">
+<div class="flex h-full flex-col">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Aura AI logo with abstract purple and pink gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzv_fvJX2d4jWq8sHh1sZRF3nfSP8ZzYVRC99NxdPD9M9_LbkS935fVNWDCaJajn6rKHDKfuiIcxMtIfOgUZLrsNPtbTvBvI1B4PNgHPDVqojeQVFPMPIIikyZ8XxdP9CbRFm3e_kpVuThf_FSbI4SzK9rWm8rEETsrR3JWZ0LQuhu6cw-bVoazuN-WI-HC10oLAdIOPwrT_UaiXsuzdF5RriTQNdfzdpFF6uNPqOzcNhFW0aWdXSBQY9KukkKUF9N8MbzLp6nZBs");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Aura AI</h1>
+<p class="text-[#A0A0B0] text-sm font-normal leading-normal">Email Intelligence</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white" href="#">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<p class="text-sm font-medium leading-normal">Data Control</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-[#A0A0B0] hover:text-white transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">shield</span>
+<p class="text-sm font-medium leading-normal">Security</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-[#A0A0B0] hover:text-white transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">privacy_tip</span>
+<p class="text-sm font-medium leading-normal">Privacy Center</p>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-10">
+<div class="mx-auto max-w-4xl">
+<!-- PageHeading -->
+<div class="mb-10">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-white text-4xl font-bold leading-tight tracking-tight">Privacy &amp; Security</p>
+<p class="text-[#A0A0B0] text-base font-normal leading-normal">Manage your data, security, and privacy settings.</p>
+</div>
+</div>
+<!-- Data Control Section -->
+<section class="flex flex-col gap-6">
+<h2 class="text-white text-2xl font-bold leading-tight tracking-tight">Data Control</h2>
+<!-- ActionPanel: Exclude Senders -->
+<div class="glass-card rounded-xl p-5 @container">
+<div class="flex flex-1 flex-col items-start justify-between gap-4 @[480px]:flex-row @[480px]:items-center">
+<div class="flex flex-col gap-1">
+<p class="text-white text-base font-bold leading-tight">Exclude Senders</p>
+<p class="text-[#A0A0B0] text-sm font-normal leading-normal">Add email addresses that the AI should ignore. Enter an address and press enter.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-[0_0_15px_rgba(140,43,238,0.5)] hover:bg-primary/90 transition-all duration-300">
+<span class="truncate">Add Sender</span>
+</button>
+</div>
+<!-- Chips: Excluded Emails -->
+<div class="flex gap-2 p-3 flex-wrap pt-5">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-3 pr-2">
+<p class="text-white text-sm font-medium leading-normal">spam@example.com</p>
+<button class="text-white/70 hover:text-white">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-3 pr-2">
+<p class="text-white text-sm font-medium leading-normal">newsletter@junk.com</p>
+<button class="text-white/70 hover:text-white">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 pl-3 pr-2">
+<p class="text-white text-sm font-medium leading-normal">alerts@social.com</p>
+<button class="text-white/70 hover:text-white">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Data Redaction Card -->
+<div class="glass-card rounded-xl p-5">
+<div class="flex flex-col gap-1 mb-4">
+<p class="text-white text-base font-bold leading-tight">Redact Sensitive Information</p>
+<p class="text-[#A0A0B0] text-sm font-normal leading-normal">Automatically hide sensitive data recognized by the AI.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Toggle Switch -->
+<div class="flex items-center justify-between rounded-lg p-3 bg-white/5">
+<p class="text-white text-sm font-medium">Social Security Numbers</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="toggle-bg h-6 w-11 rounded-full bg-gray-700 peer-checked:bg-primary transition-colors"></div>
+</label>
+</div>
+<div class="flex items-center justify-between rounded-lg p-3 bg-white/5">
+<p class="text-white text-sm font-medium">Credit Card Numbers</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="peer sr-only" type="checkbox" value=""/>
+<div class="toggle-bg h-6 w-11 rounded-full bg-gray-700 peer-checked:bg-primary transition-colors"></div>
+</label>
+</div>
+<div class="flex items-center justify-between rounded-lg p-3 bg-white/5">
+<p class="text-white text-sm font-medium">Phone Numbers</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="toggle-bg h-6 w-11 rounded-full bg-gray-700 peer-checked:bg-primary transition-colors"></div>
+</label>
+</div>
+<div class="flex items-center justify-between rounded-lg p-3 bg-white/5">
+<p class="text-white text-sm font-medium">Home Addresses</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="peer sr-only" type="checkbox" value=""/>
+<div class="toggle-bg h-6 w-11 rounded-full bg-gray-700 peer-checked:bg-primary transition-colors"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- ActionPanel: Data Deletion -->
+<div class="glass-card rounded-xl p-5 @container">
+<div class="flex flex-1 flex-col items-start justify-between gap-4 @[480px]:flex-row @[480px]:items-center">
+<div class="flex flex-col gap-1">
+<p class="text-white text-base font-bold leading-tight">Request Data Deletion</p>
+<p class="text-[#A0A0B0] text-sm font-normal leading-normal">Permanently delete your personal data from our systems.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-red-600/80 text-white text-sm font-medium leading-normal hover:bg-red-600 transition-all duration-300">
+<span class="truncate">Request Deletion</span>
+</button>
+</div>
+</div>
+</section>
+<div class="my-10 border-t border-white/10"></div>
+<!-- Security Section -->
+<section class="flex flex-col gap-6">
+<h2 class="text-white text-2xl font-bold leading-tight tracking-tight">Security</h2>
+<!-- ActionPanel: 2FA -->
+<div class="glass-card rounded-xl p-5 @container">
+<div class="flex flex-1 flex-col items-start justify-between gap-4 @[480px]:flex-row @[480px]:items-center">
+<div class="flex flex-col gap-1">
+<p class="text-white text-base font-bold leading-tight">Two-Factor Authentication (2FA)</p>
+<p class="text-[#A0A0B0] text-sm font-normal leading-normal">Add an extra layer of security to your account.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-[0_0_15px_rgba(140,43,238,0.5)] hover:bg-primary/90 transition-all duration-300">
+<span class="truncate">Enable 2FA</span>
+</button>
+</div>
+</div>
+<!-- Info Card: Encryption -->
+<div class="glass-card rounded-xl p-5">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">enhanced_encryption</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-white text-base font-bold leading-tight">End-to-End Encryption</p>
+<p class="text-green-400 text-sm font-medium leading-normal">Active</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+</body></html>

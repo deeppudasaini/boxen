@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Communication Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8c2bee",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex h-full grow flex-row">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col bg-white/5 p-4">
+<div class="flex h-full flex-col justify-between">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract purple and pink gradient" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaZj27YBJFHbpFQMGN12oHUNihUsyaGtVwSdwCzphFaJpCi4XJZUcVfzbx85dmp8UKP-jpH6CRa9Ru6nq6v38JeNZT00jJAEYutGspzIhqkxceCj6zDDz78put5AMkhmJ9whga9FquakwPFszA_8lTYHuQrQN4ySxIjjATCX9paUUb6rBM4cl6h_R2aL3FowJy3ogrEDwdgzWYRultGT7yXx3H3661_pTDkaeElnetD8L3RXA8x1xOIV45w09sG0kPpZJejpWRYIM');"></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">AI Agent</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">user@email.com</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-gray-300 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white" href="#">
+<span class="material-symbols-outlined fill">monitoring</span>
+<p class="text-sm font-medium leading-normal">Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-gray-300 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">inbox</span>
+<p class="text-sm font-medium leading-normal">Inbox</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-gray-300 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-gray-300 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="mx-auto flex max-w-7xl flex-col gap-8">
+<!-- PageHeading -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<h1 class="text-white text-4xl font-bold leading-tight tracking-tight">Communication Analytics</h1>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-wide shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+<span>Export Report</span>
+</button>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap gap-2">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 text-white hover:bg-white/20 transition-colors">
+<p class="text-sm font-medium leading-normal">Last 7 Days</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/30 px-4 text-white">
+<p class="text-sm font-medium leading-normal">Last 30 Days</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 text-white hover:bg-white/20 transition-colors">
+<p class="text-sm font-medium leading-normal">This Month</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 text-white hover:bg-white/20 transition-colors">
+<p class="text-sm font-medium leading-normal">This Year</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-4 pr-3 text-white hover:bg-white/20 transition-colors">
+<p class="text-sm font-medium leading-normal">Custom Range</p>
+<span class="material-symbols-outlined text-base">arrow_drop_down</span>
+</button>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<div class="flex flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+<p class="text-gray-300 text-base font-medium leading-normal">Average Response Time</p>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight">2h 15m</p>
+<p class="text-green-400 text-base font-medium leading-normal">+5%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+<p class="text-gray-300 text-base font-medium leading-normal">Total Emails Analyzed</p>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight">1,482</p>
+<p class="text-orange-400 text-base font-medium leading-normal">-2%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+<p class="text-gray-300 text-base font-medium leading-normal">Busiest Day</p>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight">Wednesday</p>
+<p class="text-green-400 text-base font-medium leading-normal">+10%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+<p class="text-gray-300 text-base font-medium leading-normal">Top Relationship</p>
+<p class="text-white tracking-tight text-3xl font-bold leading-tight">Jane Doe</p>
+<p class="text-green-400 text-base font-medium leading-normal">+8%</p>
+</div>
+</div>
+<!-- Charts -->
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+<div class="flex min-h-[300px] flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+<p class="text-white text-lg font-medium leading-normal">Email Volume Trends</p>
+<div class="flex items-baseline gap-4">
+<p class="text-white tracking-tight text-4xl font-bold leading-tight truncate">1,482</p>
+<div class="flex gap-1">
+<p class="text-gray-400 text-base font-normal leading-normal">Last 30 Days</p>
+<p class="text-green-400 text-base font-medium leading-normal">+12.5%</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_1131_5935)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#8c2bee" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_1131_5935" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#8c2bee" stop-opacity="0.4"></stop>
+<stop offset="1" stop-color="#8c2bee" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="flex min-h-[300px] flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+<p class="text-white text-lg font-medium leading-normal">Response Time Patterns</p>
+<div class="flex items-baseline gap-4">
+<p class="text-white tracking-tight text-4xl font-bold leading-tight truncate">2h 15m</p>
+<div class="flex gap-1">
+<p class="text-gray-400 text-base font-normal leading-normal">Last 30 Days</p>
+<p class="text-orange-400 text-base font-medium leading-normal">-3.2%</p>
+</div>
+</div>
+<div class="grid flex-1 grid-flow-col gap-4 grid-rows-[1fr_auto] items-end justify-items-center px-3 pt-4">
+<div class="bg-primary/30 w-full rounded-t" style="height: 100%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Mon</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 10%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Tue</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 80%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Wed</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 70%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Thu</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 70%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Fri</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 40%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Sat</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 50%;"></div>
+<p class="text-gray-400 text-sm font-bold leading-normal tracking-wide">Sun</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

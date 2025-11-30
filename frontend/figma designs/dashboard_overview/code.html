@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    .material-symbols-outlined.fill {
+      font-variation-settings:
+        'FILL' 1
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#8c2bee",
+            "background-light": "#f7f6f8",
+            "background-dark": "#191022",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col gap-y-8 border-r border-white/10 bg-background-dark/50 p-4 font-display">
+<div class="flex items-center gap-3 px-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="IntellectMail logo with a purple and pink gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuobug6V2fYvcWfFMnvZ860fVMgNauy4vd3jKpx4TVqjIfrojNwPww96JDc7hesUbkY9PH-CwMNsNj2Ye4DbtHwHWHhcwG7s2-yJRWB4z_sZpxuWE0iHMPykQBptTGHKZAan19ZH8semHWCgbUSkQhvgk3-dkkgcI-fuEhYEIqwVbmZ5GNpnTwlwsFIFgO156ViWXmR8LqtPzlzsORYj2ek7IkxYOievEdYBaYLdRkff1j9gIGXHpdg6zGcY_VsMx7rzhPVqpc7VY");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">IntellectMail</h1>
+<p class="text-white/60 text-sm font-normal leading-normal">AI Assistant</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined fill">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/80 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inbox</span>
+<p class="text-sm font-medium leading-normal">Inbox</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/80 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Contacts</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/80 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/80 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-10 py-3">
+<div class="flex items-center gap-8">
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Dashboard Overview</h2>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-white/60 flex border-none bg-white/5 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-white/5 focus:border-none h-full placeholder:text-white/60 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-white/5 text-white/80 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-white/5 text-white/80 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with abstract background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtGQwTKTXc1kPxY96lpLUWgAN34oqxDVpf0sYfxS1eY8pbmRtvdeyyizuhGKLtofSlQZpcLdthJT_3a4NP_KI3lMVlzEc2FO2OAtcXLgfucY38K3MByUS5jO-wDYkbKxRqw2j88Ld-uNZK2evdxIYT_FXgJDXtBHvLhHw0imoTnT8tqzHt5Li1iuKd5NPzOGffIG5o5GGmqg8UC6WqOLz9pbdMapRrxeugSFVreUAQFKgZ-JiZEJaYkrISdRYJBLyzsCur8zTUzCE");'></div>
+</div>
+</header>
+<!-- Dashboard Grid -->
+<div class="p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Stats Section -->
+<div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+<p class="text-white/80 text-base font-medium leading-normal">Urgent Emails</p>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">12</p>
+<p class="text-green-400 text-base font-medium leading-normal">+5%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+<p class="text-white/80 text-base font-medium leading-normal">Completed Action Items</p>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">28</p>
+<p class="text-green-400 text-base font-medium leading-normal">+12%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+<p class="text-white/80 text-base font-medium leading-normal">New Contacts</p>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">5</p>
+<p class="text-red-400 text-base font-medium leading-normal">-2%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-white/10 bg-white/5">
+<p class="text-white/80 text-base font-medium leading-normal">Meetings Scheduled</p>
+<p class="text-white tracking-light text-2xl font-bold leading-tight">3</p>
+<p class="text-green-400 text-base font-medium leading-normal">+8%</p>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="lg:col-span-2 flex flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-6">
+<p class="text-white text-base font-medium leading-normal">Activity Trends</p>
+<p class="text-white tracking-light text-[32px] font-bold leading-tight truncate">1,284 Emails</p>
+<div class="flex gap-1">
+<p class="text-white/60 text-base font-normal leading-normal">Last 30 Days</p>
+<p class="text-green-400 text-base font-medium leading-normal">+15.3%</p>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color: #8c2bee; stop-opacity: 0.3;"></stop>
+<stop offset="100%" style="stop-color: #8c2bee; stop-opacity: 0;"></stop>
+</lineargradient>
+</defs>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#chartGradient)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#8c2bee" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="flex justify-around">
+<p class="text-white/60 text-[13px] font-bold leading-normal tracking-[0.015em]">Week 1</p>
+<p class="text-white/60 text-[13px] font-bold leading-normal tracking-[0.015em]">Week 2</p>
+<p class="text-white/60 text-[13px] font-bold leading-normal tracking-[0.015em]">Week 3</p>
+<p class="text-white/60 text-[13px] font-bold leading-normal tracking-[0.015em]">Week 4</p>
+</div>
+</div>
+</div>
+<!-- Top Contacts Section -->
+<div class="lg:col-span-1 flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6">
+<div class="flex justify-between items-center">
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Top Contacts</h2>
+<a class="text-sm font-medium text-primary hover:underline" href="#">View All</a>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="Avatar of Olivia Martin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6dnmPgUry33Div5lVHjJKsCNH4U2itwQZGYNaGLOQI8EsmbMjh6Em9Qbmcr7xKHvGkK7urI-0Di71KyLqIddgO6vaBe1PZQ5H0cWl4aAjONyKkbkIM7wDGmLtAHgE4W243hUsBsVZzSI5Okva_xvapPRf6sjkLWcj7hKAcRCysRIsOIJjPSyXB9pwzBlTz11R8CKEyTxnvxin5Uz7RXeexrUkan3Vgur4xBnSZtsfwj2p8zpIZfqfJpWvjWZlNluDvWUDnkdVYcE"/>
+<div>
+<p class="font-medium text-white">Olivia Martin</p>
+<p class="text-sm text-white/60">olivia.m@example.com</p>
+</div>
+</div>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 text-white/80 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">more_horiz</span>
+</button>
+</li>
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="Avatar of Liam Johnson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSlzbc0GW7cC1-qiie5QQICS5U41aZTSMMe_55lfEBK5YFETWP_mVAUZMw56xYzvhrndWcS_ssre3Wx4PxTRXXjv7843kROExfzOxaV_oVudNFebQU146iiKQATLDwRkUKOvkIuAG_Qrsplx6w_TbN0BdZjQHUEWhrJ5NV5jURmlePu4T5RZF6k9neNsGKK4RSyO7lOIlSbqV7FTnlBv79Rzp9fi5Lne53rbbHQBKWZ2DWUEPVUrozZgQiym1tnae0v8blAxkw8Lk"/>
+<div>
+<p class="font-medium text-white">Liam Johnson</p>
+<p class="text-sm text-white/60">liam.j@example.com</p>
+</div>
+</div>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 text-white/80 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">more_horiz</span>
+</button>
+</li>
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="Avatar of Ava Williams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO4iDt341sYdQQhRvb3GETV5dQ97_tZrD9LDEavXEPUE_H-q26pEW-OPkF2yEmxzeeZ-8EZXQ9rjtZBScQ2vKjIyd-x8nZ86lG8Ivjnc6znXuTXAscjyIlppxtew7MY3A0ABkWi_NtG9W1ZjzwHl2YrK7vvkPcjJdB_XglV1QE79QY0yhzFmIQ9i_rhnGS4UQmt9UrgVgtM6uMTX-yZiJBPZqbitBtO7S-0GmhbSdR1uaghssd3eiyeGg8A2E_JgxNhLEyfSSU52g"/>
+<div>
+<p class="font-medium text-white">Ava Williams</p>
+<p class="text-sm text-white/60">ava.w@example.com</p>
+</div>
+</div>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 text-white/80 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">more_horiz</span>
+</button>
+</li>
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="Avatar of Noah Brown" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgYXxFv9I4fP640fjwizTd0b1rjoqxnlMzF_r8IUknCwQLcjElcbeMBCeDOB45HbvaKAeuqZQ1a9gjNYgCEXIvbbpr30oY_4Z0ps8wZ6q50LEfjxRZHNsmjjJwbgaB8AFmdfSKlI0OkMaFEWsdpbFlMGx52TbFwrmdINLrKD7okLNKU7R31mDeACI5kauLEQxRJGVEZC_CRp5MzxBaevU8c98oiE_9LlaUJe-R7fP7H_3HpOqQZ4A-ce9RF5PowIlYvbEh3DLpO6Y"/>
+<div>
+<p class="font-medium text-white">Noah Brown</p>
+<p class="text-sm text-white/60">noah.b@example.com</p>
+</div>
+</div>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg bg-white/10 text-white/80 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-base">more_horiz</span>
+</button>
+</li>
+</ul>
+</div>
+<!-- Project Risk Signals Section -->
+<div class="lg:col-span-3 flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-6">
+<div class="flex justify-between items-center">
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Project Risk Signals</h2>
+<a class="text-sm font-medium text-primary hover:underline" href="#">View All</a>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+<div class="flex-shrink-0">
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20 text-red-400">
+<span class="material-symbols-outlined text-base">priority_high</span>
+</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-white">Missed Deadline Mentioned</p>
+<p class="text-sm text-white/60">"Project Phoenix" email from Client XYZ.</p>
+</div>
+<p class="text-sm text-white/60">2 hours ago</p>
+</li>
+<li class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+<div class="flex-shrink-0">
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/20 text-yellow-400">
+<span class="material-symbols-outlined text-base">sentiment_neutral</span>
+</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-white">Negative Sentiment Detected</p>
+<p class="text-sm text-white/60">Follow-up on Q3 budget review.</p>
+</div>
+<p class="text-sm text-white/60">Yesterday</p>
+</li>
+<li class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors">
+<div class="flex-shrink-0">
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20 text-red-400">
+<span class="material-symbols-outlined text-base">priority_high</span>
+</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-white">Urgent Request: "Project Titan"</p>
+<p class="text-sm text-white/60">Immediate action required on the latest specs.</p>
+</div>
+<p class="text-sm text-white/60">3 days ago</p>
+</li>
+</ul>
+</div>
+</div>
+</main>
+</div>
+</body></html>

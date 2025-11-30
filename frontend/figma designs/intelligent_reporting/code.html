@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Intelligent Reporting</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#8c2bee",
+            "background-light": "#f7f6f8",
+            "background-dark": "#191022",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-white/10 px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-black dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Email Intelligence Agent</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4 md:gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-zinc-600 dark:text-zinc-300 text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">Reporting</a>
+<a class="text-zinc-600 dark:text-zinc-300 text-sm font-medium leading-normal" href="#">Contacts</a>
+<a class="text-zinc-600 dark:text-zinc-300 text-sm font-medium leading-normal" href="#">Settings</a>
+</div>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-zinc-200 dark:bg-white/10 text-black dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEJNV40hvr24jRTg483NXAhaKAsEIw9saADWkfQGMqdCkRkoyVhJQa8KZ1BdXZ2jku0gox6Jd0VCCMzfwdRJYh5WUPeOICgYxLmJJncbBF0frgG_1qTVx3WprJa5tOkHizG4WutZdU3FYvUzvOriUhItVDoO25ieLJcuvrZ5f8TcsWeqPsE1oxVSUBp3KZO2aEL9GTKBpyyFW6igvLYmEc0UKBO2x4ZakzGTsGqPPjt2KwpQ8r3u-bYCMd_JqMOvgV5bW2y-A1TlI");'></div>
+</div>
+</header>
+<main class="flex flex-col gap-6 mt-8">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-4 p-4">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Intelligent Reporting</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal">View your weekly, monthly, and yearly reports.</p>
+</div>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-3">
+<div class="flex h-10 w-full md:w-auto md:flex-1 items-center justify-center rounded-lg bg-zinc-200 dark:bg-white/5 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-background-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-zinc-600 dark:text-zinc-400 text-sm font-medium leading-normal">
+<span class="truncate">Weekly Report</span>
+<input checked="" class="invisible w-0" name="report-timeframe" type="radio" value="Weekly Report"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-background-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-zinc-600 dark:text-zinc-400 text-sm font-medium leading-normal">
+<span class="truncate">Monthly Report</span>
+<input class="invisible w-0" name="report-timeframe" type="radio" value="Monthly Report"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-background-light dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-zinc-600 dark:text-zinc-400 text-sm font-medium leading-normal">
+<span class="truncate">Yearly Report</span>
+<input class="invisible w-0" name="report-timeframe" type="radio" value="Yearly Report"/>
+</label>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl bg-white/5 p-6 border border-white/10">
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-medium leading-normal">Emails Processed</p>
+<p class="text-black dark:text-white tracking-light text-2xl font-bold leading-tight">1,204</p>
+<p class="text-green-500 text-base font-medium leading-normal">+5.2%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl bg-white/5 p-6 border border-white/10">
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-medium leading-normal">Opportunities Identified</p>
+<p class="text-black dark:text-white tracking-light text-2xl font-bold leading-tight">18</p>
+<p class="text-green-500 text-base font-medium leading-normal">+8.1%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl bg-white/5 p-6 border border-white/10">
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-medium leading-normal">Productivity Score</p>
+<p class="text-black dark:text-white tracking-light text-2xl font-bold leading-tight">88%</p>
+<p class="text-green-500 text-base font-medium leading-normal">+2.5%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl bg-white/5 p-6 border border-white/10">
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-medium leading-normal">Avg. Response Time</p>
+<p class="text-black dark:text-white tracking-light text-2xl font-bold leading-tight">2.1 hours</p>
+<p class="text-red-500 text-base font-medium leading-normal">-0.3%</p>
+</div>
+</div>
+<!-- Charts -->
+<div class="flex flex-col lg:flex-row flex-wrap gap-4 px-4 py-6">
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-6">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Activity Summary</p>
+<p class="text-black dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">1,204 emails</p>
+<div class="flex gap-1">
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal">Last 7 days</p>
+<p class="text-green-500 text-base font-medium leading-normal">+12.5%</p>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_1131_5935)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#8c2bee" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_1131_5935" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#8c2bee" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#8c2bee" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Mon</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Tue</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Wed</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Thu</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Fri</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Sat</p>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Sun</p>
+</div>
+</div>
+</div>
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-white/10 bg-white/5 p-6">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Productivity Metrics</p>
+<p class="text-black dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">88% score</p>
+<div class="flex gap-1">
+<p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal">Last 7 days</p>
+<p class="text-green-500 text-base font-medium leading-normal">+2.5%</p>
+</div>
+<div class="grid min-h-[180px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 pt-8">
+<div class="bg-primary/30 w-full rounded-t" style="height: 80%;"></div>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Mon</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 90%;"></div>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Tue</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 90%;"></div>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Wed</p>
+<div class="bg-primary w-full rounded-t" style="height: 50%;"></div>
+<p class="text-black dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em]">Thu</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 10%;"></div>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Fri</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 40%;"></div>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Sat</p>
+<div class="bg-primary/30 w-full rounded-t" style="height: 20%;"></div>
+<p class="text-zinc-600 dark:text-zinc-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Sun</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
