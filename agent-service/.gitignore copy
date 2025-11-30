@@ -1,0 +1,6 @@
+./Product Document.md
+
+node_modules
+dist
+
+agent-service/node_modules

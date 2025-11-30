@@ -4,3 +4,5 @@ node_modules
 dist
 
 agent-service/node_modules
+.env
+.env-example
