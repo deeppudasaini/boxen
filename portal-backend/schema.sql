@@ -1,6 +1,9 @@
 -- Boxen AI Database Schema
 -- PostgreSQL
 
+-- Enable pgvector extension
+CREATE EXTENSION IF NOT EXISTS vector;
+
 -- Users table (synced with Clerk)
 CREATE TABLE users (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -69,6 +72,21 @@ CREATE TABLE emails (
 CREATE INDEX idx_emails_account_id ON emails(account_id);
 CREATE INDEX idx_emails_thread_id ON emails(thread_id);
 CREATE INDEX idx_emails_received_at ON emails(received_at DESC);
+
+-- Email embeddings for RAG
+CREATE TABLE email_embeddings (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email_id UUID NOT NULL REFERENCES emails(id) ON DELETE CASCADE,
+    chunk_index INTEGER NOT NULL,
+    chunk_content TEXT NOT NULL,
+    embedding vector(1536), -- OpenAI embedding dimension
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_email_embeddings_email_id ON email_embeddings(email_id);
+-- Index for vector similarity search (cosine distance)
+CREATE INDEX idx_email_embeddings_embedding ON email_embeddings USING ivfflat (embedding vector_cosine_ops)
+    WITH (lists = 100);
 
 -- Email attachments
 CREATE TABLE attachments (

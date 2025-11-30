@@ -5,6 +5,9 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { AccountsModule } from './accounts/accounts.module';
 import { EmailsModule } from './emails/emails.module';
+import { RagModule } from './rag/rag.module';
+import { SummariesModule } from './summaries/summaries.module';
+import { InsightsModule } from './insights/insights.module';
 import { ClerkAuthMiddleware } from './auth/middleware/clerk-auth.middleware';
 import clerkConfig from './config/clerk.config';
 import databaseConfig from './config/database.config';
@@ -33,6 +36,9 @@ import databaseConfig from './config/database.config';
     UsersModule,
     AccountsModule,
     EmailsModule,
+    RagModule,
+    SummariesModule,
+    InsightsModule,
   ],
 })
 export class AppModule implements NestModule {

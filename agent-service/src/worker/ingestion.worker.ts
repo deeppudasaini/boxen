@@ -2,13 +2,19 @@ import { Worker, Job } from 'bullmq';
 import IORedis from 'ioredis';
 import axios from 'axios';
 import { IngestionJobData } from '../queue/queue.service';
+import { Chunker } from '../rag/chunker';
+import { Embedder } from '../rag/embedder';
 
 export class IngestionWorker {
   private worker: Worker;
   private apiBaseUrl: string;
+  private chunker: Chunker;
+  private embedder: Embedder;
 
   constructor() {
     this.apiBaseUrl = process.env.PORTAL_BACKEND_URL || 'http://localhost:3000';
+    this.chunker = new Chunker();
+    this.embedder = new Embedder();
 
     const connection = new IORedis({
       host: process.env.REDIS_HOST || 'localhost',
@@ -40,21 +46,52 @@ export class IngestionWorker {
     try {
       console.log(`Processing email for account ${data.accountId}`);
 
-      // Save email to portal-backend via API
-      const response = await axios.post(
+      // 1. Save email to portal-backend
+      const emailResponse = await axios.post(
         `${this.apiBaseUrl}/emails`,
         {
           accountId: data.accountId,
           ...data.email,
         },
         {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
+          headers: { 'Content-Type': 'application/json' },
+        }
       );
 
-      console.log(`Email saved: ${response.data.id}`);
+      const emailId = emailResponse.data.id;
+      console.log(`Email saved: ${emailId}`);
+
+      // 2. Chunk email body
+      const content = data.email.bodyText || data.email.bodyHtml || '';
+      if (!content) {
+        console.log('No content to embed');
+        return;
+      }
+
+      const chunks = await this.chunker.splitText(content);
+      console.log(`Generated ${chunks.length} chunks`);
+
+      // 3. Generate embeddings
+      if (chunks.length > 0) {
+        const embeddings = await this.embedder.embedDocuments(chunks);
+
+        // 4. Save embeddings
+        for (let i = 0; i < chunks.length; i++) {
+          await axios.post(
+            `${this.apiBaseUrl}/rag/embeddings`,
+            {
+              emailId,
+              chunkIndex: i,
+              chunkContent: chunks[i],
+              embedding: embeddings[i],
+            },
+            {
+              headers: { 'Content-Type': 'application/json' },
+            }
+          );
+        }
+        console.log(`Saved ${chunks.length} embeddings`);
+      }
     } catch (error) {
       console.error('Error processing email:', error);
       throw error;
