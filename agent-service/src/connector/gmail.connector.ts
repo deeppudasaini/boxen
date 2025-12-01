@@ -57,7 +57,7 @@ export class GmailConnector {
 
   async refreshAccessToken(): Promise<string> {
     const { credentials } = await this.oauth2Client.refreshAccessToken();
-    return credentials.access_token;
+    return credentials.access_token!;
   }
 
   async setupPushNotifications(topicName: string): Promise<void> {

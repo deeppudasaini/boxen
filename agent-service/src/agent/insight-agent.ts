@@ -1,18 +1,19 @@
-import { ChatOpenAI } from '@langchain/openai';
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { JsonOutputParser } from '@langchain/core/output_parsers';
 import axios from 'axios';
 
 export class InsightAgent {
-  private llm: ChatOpenAI;
+  private llm: ChatGoogleGenerativeAI;
   private apiBaseUrl: string;
 
   constructor() {
-    this.llm = new ChatOpenAI({
-      openAIApiKey: process.env.OPENAI_API_KEY,
-      modelName: 'gpt-4-turbo-preview',
+    this.llm = new ChatGoogleGenerativeAI({
+      apiKey: process.env.GOOGLE_API_KEY!,
+      model: 'gemini-1.5-pro',
       temperature: 0.2,
     });
+
     this.apiBaseUrl = process.env.PORTAL_BACKEND_URL || 'http://localhost:3000';
   }
 
@@ -31,7 +32,7 @@ export class InsightAgent {
         Body: Let's discuss the contract renewal next week.
       `;
 
-      // 2. Generate Insights
+      // Generate Insights
       const template = `Analyze the following emails and extract key insights.
 Return a JSON array of objects with fields: title, description, insightType (deadline, relationship, topic), confidenceScore (0-1).
 
@@ -43,9 +44,9 @@ Insights JSON:`;
       const prompt = PromptTemplate.fromTemplate(template);
       const chain = prompt.pipe(this.llm).pipe(new JsonOutputParser());
 
-      const insights:any = await chain.invoke({ context: emailContext });
+      const insights: any = await chain.invoke({ context: emailContext });
 
-      // 3. Save Insights
+      // Save Insights
       if (Array.isArray(insights)) {
         for (const insight of insights) {
           await axios.post(

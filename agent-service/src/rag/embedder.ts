@@ -1,12 +1,12 @@
-import { OpenAIEmbeddings } from '@langchain/openai';
+import { GoogleGenerativeAIEmbeddings } from '@langchain/google-genai';
 
 export class Embedder {
-  private model: OpenAIEmbeddings;
+  private model: GoogleGenerativeAIEmbeddings;
 
   constructor() {
-    this.model = new OpenAIEmbeddings({
-      openAIApiKey: process.env.OPENAI_API_KEY,
-      modelName: 'text-embedding-3-small', // Cost-effective and high performance
+    this.model = new GoogleGenerativeAIEmbeddings({
+      apiKey: process.env.GOOGLE_API_KEY!,
+      modelName: 'text-embedding-004',
     });
   }
 
